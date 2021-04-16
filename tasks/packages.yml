@@ -1,0 +1,401 @@
+---
+#UPDATE - UPGRADE
+- name: Upgrading all packages (Ubuntu/Debian)
+  apt:
+    upgrade: dist
+  when: ansible_os_family == "Debian" or ansible_os_family == "Ubuntu"
+
+# - name: Upgrading all packages (CentOS)
+#   yum:
+#     name: '*'
+#     state: latest
+#   when: ansible_os_family == "RedHat"
+   
+#    #INSTALL i386 COMMON PACKAGES 
+#- name: Instala paquetes common i386  
+#  apt:
+#    name: "{{ packages }}"
+#    update_cache: "{{add_i386.changed}}"
+#  vars:
+#    packages:
+#      - libgl1-mesa-dri:i386
+#      - libgl1-mesa-glx:i386
+#      - libasound2-plugins:i386
+#      - wine-stable:i386
+#      - wine32-development
+
+#INSTALL COMMON PACKAGES 
+- name: Instala paquetes common
+  apt: 
+    name: "{{ packages }}"
+  vars:
+    packages:
+      # - chromium-browser
+      # - chromium-browser-l10n
+      # - chromium-codecs-ffmpeg
+      # - forticlient
+      # - kubectx
+      # - libdvd-pkg
+      # - libvirt-bin
+      # - libvirt-dev
+      # - lxd
+      # - lxd-client
+      # - mysql-workbench-community
+      # - qemu
+      # - qemu-kvm
+      # - skypeforlinux
+      # - synergy
+      # - synergy -- not available yet
+      # - virt-manager
+      # - virt-viewer
+      # - virtinst
+      # Lutris Vulkan
+      #- libsdl2-image-dev
+      #- wine1.8
+      #- wine32-development
+      #- winehq-stable
+      - acl
+      - apt-transport-https
+      - apt-xapian-index
+      - aptitude
+      - arc-theme
+      - arj
+      - atop
+      - autoconf
+      - automake
+      - awscli
+      # - balena-etcher-electron
+      - bc
+      - bison
+      - boot-repair
+      - brasero-cdrkit
+      - build-essential
+      - ca-certificates
+      - calibre
+      - catfish
+      - ccze
+      - celestia
+      - checkinstall
+      - cheese
+      - chrome-gnome-shell
+      - clang
+      - cmake
+      - cmake-curses-gui
+      - collectd
+      - compiz
+      - compiz-plugins-extra
+      - compizconfig-settings-manager
+      - curl
+      - dbus
+      - dconf-editor
+      - default-jdk
+      - default-jre
+      - deja-dup
+      - deja-dup-caja
+      - dia
+      - dirmngr
+      - dnsmasq
+      - docker
+      - docker-ce
+      - docker-compose
+      # - dropbox
+      - ebtables
+      - fdupes
+      - figlet
+      - file-roller
+      - filezilla
+      - filezilla-common
+      - filezilla-theme-papirus
+      - flatpak
+      - fonts-noto
+      - fpc
+      - freeglut3
+      - g++
+      - gcc
+      - gdebi
+      - gimp
+      - gir1.2-clutter-1.0
+      - gir1.2-gtop-2.0
+      - git
+      - git-flow
+      - git-ftp
+      - git-lfs
+      - git-svn
+      - gnome-shell-extensions
+      - gnome-software-plugin-flatpak
+      - gnome-tweak-tool
+      - gnome-tweaks
+      - gnupg2
+      - golang-go
+      - google-chrome-stable
+      # - google-cloud-sdk
+      # - google-cloud-sdk-app-engine-go
+      # - google-cloud-sdk-app-engine-java
+      # - google-cloud-sdk-app-engine-python
+      # - google-cloud-sdk-app-engine-python-extras
+      # - google-cloud-sdk-bigtable-emulator
+      # - google-cloud-sdk-bigtable-emulator
+      # - google-cloud-sdk-cbt
+      # - google-cloud-sdk-cloud-build-local
+      # - google-cloud-sdk-datalab
+      # - google-cloud-sdk-datastore-emulator
+      # - google-cloud-sdk-firestore-emulator
+      # - google-cloud-sdk-pubsub-emulator
+      - gparted
+      - gpick
+      - graphviz
+      - grub-customizer
+      - gufw
+      - hardinfo
+      - hddtemp
+      - htop
+      - iftop
+      - inkscape
+      - intel-microcode
+      - iotop
+      - iptables-persistent
+      - iptstate
+      - jq
+      - k3b
+      - kdeconnect
+      - krita
+      - kubectl
+      - language-pack-es
+      - laptop-mode-tools
+      - libavformat-dev
+      - libegl1-mesa
+      - libelf-dev
+      - libffi-dev
+      - libfile-tee-perl
+      - libfreetype6-dev
+      - libgdbm-dev
+      - libgl1-mesa-dri:i386
+      - libglib2.0-dev-bin
+      - libguestfs-perl
+      - libjack-dev
+      - libjack0
+      - libjansson-dev
+      - liblua5.3-dev
+      - libmagic-dev
+      - libncurses5-dev
+      - libnvidia-gl-440 
+      - libnvidia-gl-440:i386
+      - libopencv-highgui-dev
+      - libportmidi-dev
+      - libreadline-dev
+      - libsqlite3-dev
+      - libssl-dev
+      - libstdc++5
+      - libstdc++6
+      - libsvn-java
+      - libswscale-dev
+      - libtool
+      - libvulkan1
+      - libvulkan1:i386
+      - libxml-writer-perl
+      - libxml2-dev
+      - libxslt-dev
+      - libyaml-dev
+      - linux-generic
+      - linux-headers-generic
+      - lldpd
+      - lm-sensors
+      - lsb-release
+      - lshw
+      - lutris
+      - mailutils
+      - make
+      - meld
+      - mesa-vulkan-drivers
+      - mesa-vulkan-drivers:i386
+      - module-assistant
+      - moreutils
+      - mpack
+      - multipath-tools
+      - multitail
+      - nano
+      - ncdu
+      - netcat
+      - netcat-openbsd
+      - network-manager-openvpn
+      - network-manager-openvpn-gnome
+      - nfs-common
+      - nfs-kernel-server
+      - nmap
+      - nmon
+      - nodejs
+      - ntp
+      - ntpdate
+      # - numix-blue-gtk-theme
+      # - numix-gtk-theme
+      # - numix-icon-theme
+      # - numix-icon-theme-circle
+      - nvidia-cuda-dev
+      - nvidia-cuda-toolkit
+      - nvidia-driver-440 
+      - openfortivpn
+      - openssh-client
+      - openssh-server
+      - openvpn
+      - p7zip-full
+      - p7zip-rar
+      # - papirus-icon-theme
+      - pepperflashplugin-nonfree
+      - pgadmin3
+      - pigz
+      - pkg-config
+      - plank
+      - playonlinux
+      - portaudio19-dev
+      - postgresql-client
+      - postfix
+      - powertop
+      - preload
+      - psensor
+      - pulseaudio-equalizer
+      - putty-tools
+      - pv
+      - python
+      - python-packaging
+      - python-setuptools
+      - python3-pip
+      - python3-venv
+      - quodlibet
+      - rar
+      - rbenv
+      - rdesktop
+      - rdfind
+      - redshift
+      - redshift-gtk
+      - remmina
+      - rtl8812au-dkms
+      - ruby-dev
+      - ruby-full
+      - screen
+      - screenfetch
+      - sharutils
+      - shotwell
+      - shutter
+      - siege
+      - smartmontools
+      - snapd
+      - snmp
+      - snmp-mibs-downloader
+      - snmpd
+      - software-properties-common
+      - soundconverter
+      # - spotify-client
+      - ssh-askpass
+      - steam
+      - stellarium
+      - stress
+      # - sublime-merge
+      # - sublime-text
+      - subversion
+      - sudo
+      - swaks
+      - synaptic
+      - syncthing
+      - sysstat
+      - tcpdump
+      # - teams
+      - telnetd
+      - terminator
+      # - timekpr-next
+      - timeshift
+      - tinyca
+      - tmux
+      - tor
+      - torbrowser-launcher
+      - ttf-bitstream-vera
+      - ttf-dejavu
+      - ttf-mscorefonts-installer
+      - ubuntu-restricted-extras
+      - unace
+      - unixodbc-dev
+      - unrar
+      - unzip
+      - uuid-runtime
+      - variety
+      - vim
+      - vim-common
+      - vim-gtk
+      - vim-gui-common
+      - vim-snippets
+      - vinagre
+      # - virtualbox-6.1
+      - virtualenv
+      - vlc
+      - vlc-plugin-bittorrent
+      - whois
+      - wine
+      - winetricks
+      - xclip
+      - xinetd
+      - xserver-xorg
+      - xserver-xorg-input-all
+      - xserver-xorg-video-all
+      - yarn
+      - zip
+      - zlib1g-dev
+      - zsh
+    state: present
+  #register: common-packages-installation
+  tags: common
+
+# Snap
+- name: Install snaps
+  snap:
+    name:
+      # - rambox
+      # - tfswitch
+      # - wickrpro
+      - beekeeper-studio
+      - bitwarden
+      - brave
+      - discord
+      - doctl
+      - dbeaver-ce
+      - insomnia
+      - k9s
+      - keepassxc
+      - lxd
+      - notion-snap
+      - postman
+      - retroarch
+      - signal-desktop
+      - telegram-desktop
+      - vault
+      - wickrme
+      - zoom-client
+
+- name: Install snaps classic
+  snap:
+    name:
+      # - atom
+      # - eclipse
+      # - phpstorm
+      - bashtop
+      - bpytop
+      - code
+      - helm
+      - powershell
+      - pycharm-community
+      - skype
+      - slack
+    classic: yes
+
+# Flatpak
+# - name: Add the Gnome flatpak remote to the system installation
+#   flatpak_remote:
+#     name: gnome
+#     state: present
+#     flatpakrepo_url: https://sdk.gnome.org/gnome-apps.flatpakrepo
+
+- name: Add the flathub flatpak repository remote to the user installation
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    method: user
+
