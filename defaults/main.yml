@@ -1,3 +1,5 @@
 ---
 # defaults file for ansible-commom-desktop
 codename: "{{ lookup('env','DISTRIB_CODENAME') }}"
+
+ssh_port: "22"
