@@ -75,6 +75,7 @@
             - RST
             - SYN
             - FIN
+      when: ansible_architecture == "x86_64"
 
     #ENABLE IPTABLES PERSISTENCE
     - name: Install `netfilter-persistent` && `iptables-persistent` packages
