@@ -2,6 +2,7 @@
     #ADD i386 SUPPORT
     - lineinfile: dest=/var/lib/dpkg/arch line="amd64" create=yes
       when: ansible_architecture == "x86_64"
+      
     - lineinfile: dest=/var/lib/dpkg/arch line="i386" create=yes
       register: add_i386
       when: ansible_architecture == "x86_64"
