@@ -30,8 +30,8 @@
 - include: users.yml
   tags: users
 
-# - include: sshd.yml
-#   tags: sshd
+- include: sshd.yml
+  tags: sshd
 
 # - include: fail2ban.yml
 #   tags: fail2ban
