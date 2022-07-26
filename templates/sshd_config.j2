@@ -6,7 +6,7 @@ AllowAgentForwarding no
 AllowTcpForwarding yes
 ChallengeResponseAuthentication no
 Compression yes
-IdentitiesOnly yes
+# IdentitiesOnly yes
 LogLevel INFO
 LoginGraceTime 120
 MaxAuthTries 2
@@ -14,16 +14,16 @@ MaxSessions 2
 # PasswordAuthentication no
 PermitRootLogin no
 PermitTunnel yes
-PreferredAuthentications publickey
+# PreferredAuthentications publickey
 PrintMotd yes
 Protocol 2
-ServerAliveCountMax 20
-ServerAliveInterval 60
+# ServerAliveCountMax 20
+# ServerAliveInterval 60
 StrictModes yes
 Subsystem sftp /usr/lib/openssh/sftp-server
 SyslogFacility AUTH
 TCPKeepAlive no
 UseDNS no
 UsePAM yes
-UsePrivilegeSeparation yes
+# UsePrivilegeSeparation yes
 X11Forwarding no
