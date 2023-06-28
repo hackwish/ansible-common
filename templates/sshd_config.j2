@@ -1,29 +1,28 @@
 Port {{ ssh_port }}
 
+# IdentitiesOnly yes
+# PasswordAuthentication no
+# PreferredAuthentications publickey
+# ServerAliveCountMax 20
+# ServerAliveInterval 60
 AcceptEnv LANG LC_*
-AddressFamily inet
 AllowAgentForwarding no
 AllowTcpForwarding yes
 ChallengeResponseAuthentication no
 Compression yes
-# IdentitiesOnly yes
 LogLevel INFO
 LoginGraceTime 120
 MaxAuthTries 10
 MaxSessions 2
-# PasswordAuthentication no
 PermitRootLogin no
 PermitTunnel yes
-# PreferredAuthentications publickey
 PrintMotd yes
 Protocol 2
-# ServerAliveCountMax 20
-# ServerAliveInterval 60
 StrictModes yes
 Subsystem sftp /usr/lib/openssh/sftp-server
 SyslogFacility AUTH
 TCPKeepAlive no
 UseDNS no
 UsePAM yes
-# UsePrivilegeSeparation yes
+UsePrivilegeSeparation yes
 X11Forwarding no
