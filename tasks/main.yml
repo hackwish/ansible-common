@@ -3,8 +3,8 @@
 - include: ssh-keys.yml
   tags: ssh-keys
 
-- include: i386-support.yml
-  tags: i386-support
+# - include: i386-support.yml
+#   tags: i386-support
 
 - include: locales.yml
   tags: locales
