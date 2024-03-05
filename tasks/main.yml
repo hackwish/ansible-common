@@ -1,5 +1,8 @@
 ---
 # tasks file for ansible-commom
+- include: certificates.yml
+  tags: certificates
+
 - include: ssh-keys.yml
   tags: ssh-keys
 
