@@ -1,40 +1,40 @@
 ---
 # tasks file for ansible-commom
-- include: certificates.yml
+- include_tasks: certificates.yml
   tags: certificates
 
-- include: ssh-keys.yml
+- include_tasks: ssh-keys.yml
   tags: ssh-keys
 
-- include: i386-support.yml
+- include_tasks: i386-support.yml
   tags: i386-support
 
-- include: locales.yml
+- include_tasks: locales.yml
   tags: locales
 
-- include: unattended-upgrades.yml
+- include_tasks: unattended-upgrades.yml
   tags: unattended-upgrades
 
-- include: sysctl.yml
+- include_tasks: sysctl.yml
   tags: sysctl
 
-- include: ulimit.yml
+- include_tasks: ulimit.yml
   tags: ulimit
 
-- include: esync.yml
+- include_tasks: esync.yml
   tags: esync
 
-- include: iptables.yml
+- include_tasks: iptables.yml
   tags: iptables
 
-- include: ntp.yml
+- include_tasks: ntp.yml
   tags: ntp
 
-- include: users.yml
+- include_tasks: users.yml
   tags: users
 
-- include: sshd.yml
+- include_tasks: sshd.yml
   tags: sshd
 
-# - include: fail2ban.yml
+# - include_tasks: fail2ban.yml
 #   tags: fail2ban
