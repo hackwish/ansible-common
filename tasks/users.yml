@@ -27,15 +27,16 @@
         shell: /bin/zsh
         state: present
 
-    # - name: Add user bydefault
-    #   user: 
-    #     name: "bydefault" 
-    #     comment: "By Default" 
-    #     state: "present"
-    #     shell: /bin/zsh
-    #     groups: wheel
-    #     append: yes
-    #     createhome: yes
+    - name: Add user bydefault
+      user: 
+        name: "bydefault" 
+        comment: "By Default" 
+        state: "present"
+        shell: /bin/zsh
+        uid: 1010
+        groups: wheel
+        append: yes
+        createhome: yes
 
     - name: group nosu    
       group:
