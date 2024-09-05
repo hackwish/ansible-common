@@ -27,8 +27,8 @@
 - include_tasks: iptables.yml
   tags: iptables
 
-- include_tasks: ntp.yml
-  tags: ntp
+# - include_tasks: ntp.yml
+#   tags: ntp
 
 - include_tasks: users.yml
   tags: users
