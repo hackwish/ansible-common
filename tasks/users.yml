@@ -38,6 +38,17 @@
         append: yes
         createhome: yes
 
+    - name: Add user home
+      user: 
+        name: "home" 
+        comment: "Home" 
+        state: "present"
+        shell: /bin/zsh
+        uid: 1010
+        groups: wheel
+        append: yes
+        createhome: yes 
+  
     - name: group nosu    
       group:
         name: nosu
