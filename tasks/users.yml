@@ -48,6 +48,7 @@
         groups: wheel
         append: yes
         createhome: yes 
+      ignore_errors: true
   
     - name: group nosu    
       group:
