@@ -81,13 +81,13 @@
     value: '167012'
     sysctl_set: yes
     state: present
-    ignore_errors: true
+    ignoreerrors: true
 - ansible.posix.sysctl:
     name: net.netfilter.nf_conntrack_max
     value: '262144'
     sysctl_set: yes
     state: present
-    ignore_errors: true
+    ignoreerrors: true
 # Set ip forwarding on in /proc and in the sysctl file and reload if necessary
 - ansible.posix.sysctl:
     name: net.ipv4.ip_forward
