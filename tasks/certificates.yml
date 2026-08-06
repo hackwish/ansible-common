@@ -18,7 +18,7 @@
   ignore_errors: true
 
 - name: Generate a Self Signed OpenSSL certificate
-  community.crypto.openssl_certificate:
+  community.crypto.x509_certificate:
     path: /etc/ssl/crt/{{ ansible_fqdn }}.crt
     privatekey_path: /etc/ssl/private/{{ ansible_fqdn }}.pem
     csr_path: /etc/ssl/csr/{{ ansible_fqdn }}.csr
