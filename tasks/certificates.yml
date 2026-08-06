@@ -7,18 +7,18 @@
       - { path: '/etc/ssl/csr/' }
 
 - name: Generate an OpenSSL private key.
-  openssl_privatekey:
+  community.crypto.openssl_privatekey:
     path: /etc/ssl/private/{{ ansible_fqdn }}.pem
 
 - name: Generate an OpenSSL CSR.
-  openssl_csr:
+  community.crypto.openssl_csr:
     path: /etc/ssl/csr/{{ ansible_fqdn }}.csr
     privatekey_path: /etc/ssl/private/{{ ansible_fqdn }}.pem
     common_name: "{{ ansible_fqdn }}"
   ignore_errors: true
 
 - name: Generate a Self Signed OpenSSL certificate
-  openssl_certificate:
+  community.crypto.openssl_certificate:
     path: /etc/ssl/crt/{{ ansible_fqdn }}.crt
     privatekey_path: /etc/ssl/private/{{ ansible_fqdn }}.pem
     csr_path: /etc/ssl/csr/{{ ansible_fqdn }}.csr
