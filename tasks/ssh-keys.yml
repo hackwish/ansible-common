@@ -8,7 +8,7 @@
       ssh_key_file: .ssh/id_rsa
 
 - name : list users to create ssh keys
-  shell: "getent passwd | awk -F: '$3 > 999 {print $1}'"
+  shell: "getent passwd | awk -F: '$3 > 999 && system(\"test -d \" $6) == 0 {print $1}'"
   register: users_ssh
 
 - debug:
