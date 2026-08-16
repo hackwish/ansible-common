@@ -25,7 +25,12 @@
     provider: selfsigned
   ignore_errors: true
 
-- name: Copy SSL enterprise certificates 
+- name: Check if SSL enterprise certificates directory exists
+  stat:
+      path: "{{ role_path }}/files/ssl"
+  register: ssl_enterprise_dir
+
+- name: Copy SSL enterprise certificates
   copy:
       src: "{{ role_path }}/files/ssl"
       dest: /etc/ssl/
@@ -33,4 +38,4 @@
       mode: 600
       remote_src: no
       directory_mode: yes
-  ignore_errors: true
+  when: ssl_enterprise_dir.stat.exists
